@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import  useIdleCallback  from './hooks/useIdleCallback'
+import characterWave from './challenges/characterWave'
+import { useEffect } from 'react';
 
 function App() {
-  const isIdle = useIdleCallback()
-  console.log('isIdle: ', isIdle)
 
-  if (!isIdle) return null
+  useEffect(() => {
+    characterWave('hello')
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
