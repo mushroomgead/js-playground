@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import  useIdleCallback  from './hooks/useIdleCallback'
 
 function App() {
+  const isIdle = useIdleCallback()
+  console.log('isIdle: ', isIdle)
+
+  if (!isIdle) return null
   return (
     <div className="App">
       <header className="App-header">
